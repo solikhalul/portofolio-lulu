@@ -1,0 +1,1151 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio Lulu Solikha, mahasiswa Sistem Informasi Universitas Singaperbangsa Karawang.">
+
+  <title>Portofolio | Lulu Solikha</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =====================================
+       FOTO PROFIL
+    ===================================== */
+
+    .profile-placeholder {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .profile-placeholder img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* =====================================
+       LOGO KEAHLIAN
+    ===================================== */
+
+    .skill-icon {
+      display: grid;
+      place-items: center;
+    }
+
+    .skill-icon img {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .skill-icon svg {
+      width: 34px;
+      height: 34px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    /* =====================================
+       PREVIEW SEMUA SERTIFIKAT
+    ===================================== */
+
+    #certificates .certificate-preview {
+      position: relative;
+      background: #ffffff !important;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #certificates .certificate-canvas {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      background: #ffffff;
+    }
+
+    #certificates .certificate-message {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffffff;
+      color: #334155;
+      font-size: 13px;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    /* =====================================
+       TOMBOL TEMA
+       DI KIRI TENTANG
+       TANPA MENGGESER MENU
+    ===================================== */
+
+    #nav {
+      position: relative;
+    }
+
+    #nav .theme-toggle {
+      position: absolute;
+      right: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      padding: 0;
+      margin: 0;
+
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.10);
+      color: inherit;
+
+      font-size: 17px;
+      cursor: pointer;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      transition: background 0.3s ease, border-color 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    #nav .theme-toggle:hover {
+      background: rgba(96, 165, 250, 0.2);
+    }
+
+    /* =====================================
+       LIGHT MODE
+    ===================================== */
+
+    body.light-mode {
+      background: #f4f7fc !important;
+      color: #243752 !important;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.light-mode .header {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #dce5f1;
+    }
+
+    body.light-mode .logo {
+      color: #183153;
+    }
+
+    body.light-mode #nav a {
+      color: #435875;
+    }
+
+    body.light-mode #nav a:hover {
+      color: #2563eb;
+    }
+
+    body.light-mode #nav .nav-contact {
+      color: #2563eb;
+    }
+
+    body.light-mode #nav .theme-toggle {
+      color: #183153;
+      background: #eaf1ff;
+      border-color: #cbdcf5;
+    }
+
+    body.light-mode .menu-toggle {
+      color: #183153;
+      background: #eaf1ff;
+      border-color: #cbdcf5;
+    }
+
+    /* HERO */
+
+    body.light-mode .hero-copy h1 {
+      color: #183153;
+    }
+
+    body.light-mode .hero-copy h1 span,
+    body.light-mode .hero-copy h2,
+    body.light-mode .hello {
+      color: #2563eb;
+    }
+
+    body.light-mode .hero-desc,
+    body.light-mode .hero-meta {
+      color: #536783;
+    }
+
+    body.light-mode .eyebrow {
+      color: #2563eb;
+    }
+
+    body.light-mode .btn.secondary {
+      color: #2563eb;
+      border-color: #2563eb;
+    }
+
+    body.light-mode .profile-card {
+      background: #ffffff;
+      border: 1px solid #dce5f1;
+      box-shadow: 0 15px 40px rgba(30, 64, 175, 0.10);
+    }
+
+    body.light-mode .profile-caption {
+      color: #183153;
+    }
+
+    body.light-mode .profile-caption small {
+      color: #64748b;
+    }
+
+    /* JUDUL SECTION */
+
+    body.light-mode .section-heading h2,
+    body.light-mode .section-heading h2 span,
+    body.light-mode .section-title {
+      color: #183153;
+    }
+
+    body.light-mode .section-sub {
+      color: #64748b;
+    }
+
+    /* TENTANG */
+
+    body.light-mode .about {
+      background: #eaf2ff;
+    }
+
+    body.light-mode .about-grid > div {
+      color: #536783;
+    }
+
+    body.light-mode .about-lead {
+      color: #183153;
+    }
+
+    body.light-mode .stats > div {
+      background: #ffffff;
+      border: 1px solid #dce5f1;
+    }
+
+    body.light-mode .stats strong {
+      color: #2563eb;
+    }
+
+    body.light-mode .stats span {
+      color: #536783;
+    }
+
+    /* KEAHLIAN */
+
+    body.light-mode .tool-category-title {
+      color: #2563eb;
+    }
+
+    body.light-mode .skill-card {
+      background: #ffffff;
+      border-color: #dce5f1;
+      box-shadow: 0 5px 18px rgba(30, 64, 175, 0.05);
+    }
+
+    body.light-mode .skill-card h3 {
+      color: #183153;
+    }
+
+    body.light-mode .skill-card p {
+      color: #64748b;
+    }
+
+    body.light-mode .skill-card:hover {
+      background: #eff6ff;
+      border-color: #60a5fa;
+    }
+
+    /* PENGALAMAN */
+
+    body.light-mode .timeline-item {
+      color: #243752;
+    }
+
+    body.light-mode .timeline-item h3 {
+      color: #183153;
+    }
+
+    body.light-mode .timeline-item p {
+      color: #64748b;
+    }
+
+    body.light-mode .timeline-year {
+      color: #2563eb;
+    }
+
+    /* PROJECT */
+
+    body.light-mode .project-card {
+      background: #ffffff;
+      border-color: #dce5f1;
+      box-shadow: 0 5px 18px rgba(30, 64, 175, 0.05);
+    }
+
+    body.light-mode .project-info h3 {
+      color: #183153;
+    }
+
+    body.light-mode .project-info p {
+      color: #64748b;
+    }
+
+    /* SERTIFIKAT */
+
+    body.light-mode .certificate-card {
+      background: #ffffff;
+      border-color: #dce5f1;
+      box-shadow: 0 5px 18px rgba(30, 64, 175, 0.05);
+    }
+
+    body.light-mode .certificate-text b {
+      color: #183153;
+    }
+
+    body.light-mode .certificate-text small {
+      color: #64748b;
+    }
+
+    body.light-mode .certificate-preview {
+      background: #ffffff !important;
+    }
+
+    /* KONTAK */
+
+    body.light-mode .contact {
+      background: #eaf2ff;
+    }
+
+    body.light-mode .contact h2 {
+      color: #183153;
+    }
+
+    body.light-mode .social-links a {
+      color: #2563eb;
+      border-color: #2563eb;
+    }
+
+    body.light-mode .social-links a:hover {
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    /* FOOTER */
+
+    body.light-mode footer {
+      background: #eaf1fb;
+      border-top: 1px solid #dce5f1;
+    }
+
+    body.light-mode footer p {
+      color: #64748b;
+    }
+
+    body.light-mode footer > a:last-child {
+      color: #2563eb;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      #nav .theme-toggle {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <a class="logo" href="#home">PORTO<span>.</span></a>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+
+  <nav id="nav">
+
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+      type="button"
+      aria-label="Ganti tema"
+      title="Ganti tema">
+      ☀️
+    </button>
+
+    <a href="#about">Tentang</a>
+    <a href="#skills">Keahlian</a>
+    <a href="#experience">Pengalaman</a>
+    <a href="#projects">Project</a>
+    <a href="#certificates">Sertifikat</a>
+    <a class="nav-contact" href="#contact">Kontak ↗</a>
+
+  </nav>
+</header>
+
+<main>
+
+  <!-- PROFIL -->
+  <section class="hero section" id="home">
+
+    <div class="hero-copy">
+      <div class="eyebrow">
+        <span class="status-dot"></span>
+        PORTOFOLIO PRIBADI
+      </div>
+
+      <p class="hello">Halo, saya</p>
+
+      <h1>Lulu <span>Solikha.</span></h1>
+
+      <h2>Mahasiswa Sistem Informasi</h2>
+
+      <p class="hero-desc">
+        Halo, saya Lulu Solikha, mahasiswa Program Studi
+        Sistem Informasi Universitas Singaperbangsa Karawang.
+        Saya tertarik mengembangkan kemampuan di bidang
+        teknologi informasi, desain, dan kreativitas digital.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">Lihat Karya ↗</a>
+        <a class="btn secondary" href="#contact">Kontak Saya</a>
+      </div>
+
+      <div class="hero-meta">
+        <span>📍 Karawang, Indonesia</span>
+        <span>✦ Kreatif · Teliti · Adaptif</span>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+
+      <div class="profile-card">
+        <div class="profile-placeholder">
+          <!-- FOTO PROFIL -->
+          <img src="./images/foto-lulu.jpg" alt="Foto Lulu Solikha">
+        </div>
+
+        <div class="profile-caption">
+          <div>
+            <strong>Lulu Solikha</strong>
+            <small>Mahasiswa Sistem Informasi</small>
+          </div>
+          <span class="arrow-circle">↗</span>
+        </div>
+      </div>
+
+      <div class="floating-tag tag-top">✦ Creative Mindset</div>
+      <div class="floating-tag tag-bottom">Design · Technology · Ideas</div>
+    </div>
+
+  </section>
+
+
+  <!-- TENTANG SAYA -->
+  <section class="section about" id="about">
+
+    <div class="section-heading">
+      <p class="eyebrow">01 / TENTANG SAYA</p>
+      <h2>Mengenal saya <span>lebih dekat.</span></h2>
+    </div>
+
+    <div class="about-grid">
+      <p class="about-lead">
+        Saya Lulu Solikha, mahasiswa Program Studi
+        Sistem Informasi di Universitas Singaperbangsa Karawang.
+      </p>
+
+      <div>
+        <p>
+          Saya memiliki ketertarikan pada bidang teknologi informasi,
+          desain, editing, dan pengembangan kreativitas digital.
+        </p>
+
+        <p>
+          Saya senang mempelajari hal baru dan mengembangkan
+          kemampuan untuk menambah pengalaman.
+        </p>
+
+        <p>
+          Portofolio ini menjadi tempat untuk menampilkan keahlian,
+          pengalaman, project, dan sertifikat yang saya miliki.
+        </p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div><strong>01</strong><span>Kreativitas</span></div>
+      <div><strong>02</strong><span>Kolaborasi</span></div>
+      <div><strong>03</strong><span>Pengembangan diri</span></div>
+    </div>
+
+  </section>
+
+
+  <!-- KEAHLIAN -->
+  <section class="section" id="skills">
+
+    <div class="section-heading">
+      <p class="eyebrow">02 / KEAHLIAN</p>
+      <h2>Tools yang saya <span>gunakan.</span></h2>
+      <p class="section-sub">
+        Beberapa aplikasi dan teknologi yang saya gunakan
+        untuk mendukung aktivitas akademik dan kreativitas.
+      </p>
+    </div>
+
+    <!-- DESIGN & VISUAL EDITING -->
+    <div class="tool-category">
+      <h3 class="tool-category-title">Design & Visual Editing</h3>
+
+      <div class="skill-grid">
+
+        <!-- CANVA -->
+        <article class="skill-card">
+          <div class="skill-icon">
+            <svg viewBox="0 0 100 100" role="img" aria-label="Logo Canva">
+              <defs>
+                <linearGradient id="canvaGradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#00C4CC"/>
+                  <stop offset="100%" stop-color="#7D2AE8"/>
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="50" r="46" fill="url(#canvaGradient)"/>
+              <text x="50" y="61" text-anchor="middle"
+                    fill="#ffffff" font-size="25"
+                    font-family="Arial, sans-serif"
+                    font-weight="bold" font-style="italic">Canva</text>
+            </svg>
+          </div>
+          <h3>Canva</h3>
+          <p>Membuat desain poster, presentasi, banner, dan konten media sosial.</p>
+          <span class="skill-level">DESIGN TOOL</span>
+        </article>
+
+        <!-- FIGMA -->
+        <article class="skill-card">
+          <div class="skill-icon">
+            <img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma">
+          </div>
+          <h3>Figma</h3>
+          <p>Menyusun layout, wireframe, dan rancangan antarmuka UI.</p>
+          <span class="skill-level">UI / UX DESIGN</span>
+        </article>
+
+        <!-- CAPCUT -->
+        <article class="skill-card">
+          <div class="skill-icon">
+            <svg viewBox="0 0 100 100" role="img" aria-label="Logo CapCut">
+              <path d="M20 25 L80 75 M80 25 L20 75"
+                    fill="none" stroke="currentColor"
+                    stroke-width="10" stroke-linecap="round"/>
+              <path d="M17 15 L83 15 L17 85 L83 85"
+                    fill="none" stroke="currentColor"
+                    stroke-width="7" stroke-linejoin="round"
+                    stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>CapCut</h3>
+          <p>Mengedit video, menambahkan transisi, teks, dan audio.</p>
+          <span class="skill-level">VIDEO EDITING</span>
+        </article>
+
+        <!-- PHOTOSHOP -->
+        <article class="skill-card">
+          <div class="skill-icon">
+            <svg viewBox="0 0 100 100" role="img" aria-label="Logo Adobe Photoshop">
+              <rect x="5" y="5" width="90" height="90" rx="16" fill="#001E36"/>
+              <text x="50" y="65" text-anchor="middle"
+                    fill="#31A8FF" font-size="43"
+                    font-family="Arial, sans-serif"
+                    font-weight="bold">Ps</text>
+            </svg>
+          </div>
+          <h3>Adobe Photoshop</h3>
+          <p>Mengolah gambar dan mengedit elemen visual foto.</p>
+          <span class="skill-level">IMAGE EDITING</span>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- PRODUCTIVITY & OFFICE -->
+    <div class="tool-category">
+      <h3 class="tool-category-title">Productivity & Office</h3>
+
+      <div class="skill-grid">
+
+        <!-- WORD -->
+        <article class="skill-card">
+          <div class="skill-icon">
+            <svg viewBox="0 0 100 100" role="img" aria-label="Logo Microsoft Word">
+              <rect x="23" y="8" width="68" height="84" rx="7" fill="#2B579A"/>
+              <path d="M23 8 H58 V92 H23 Q16 92 16 85 V15 Q16 8 23 8Z" fill="#185ABD"/>
+              <rect x="7" y="27" width="51" height="47" rx="5" fill="#103F91"/>
+              <text x="32.5" y="60" text-anchor="middle"
+                    fill="#ffffff" font-size="33"
+                    font-family="Arial, sans-serif"
+                    font-weight="bold">W</text>
+            </svg>
+          </div>
+          <h3>Microsoft Word</h3>
+          <p>Menyusun dan memformat dokumen, laporan, serta tugas.</p>
+          <span class="skill-level">DOCUMENT</span>
+        </article>
+
+        <!-- EXCEL -->
+        <article class="skill-card">
+          <div class="skill-icon">
+            <svg viewBox="0 0 100 100" role="img" aria-label="Logo Microsoft Excel">
+              <rect x="23" y="8" width="68" height="84" rx="7" fill="#217346"/>
+              <path d="M23 8 H58 V92 H23 Q16 92 16 85 V15 Q16 8 23 8Z" fill="#185C37"/>
+              <rect x="7" y="27" width="51" height="47" rx="5" fill="#107C41"/>
+              <text x="32.5" y="60" text-anchor="middle"
+                    fill="#ffffff" font-size="33"
+                    font-family="Arial, sans-serif"
+                    font-weight="bold">X</text>
+            </svg>
+          </div>
+          <h3>Microsoft Excel</h3>
+          <p>Mengelola data dalam tabel dan menggunakan rumus dasar.</p>
+          <span class="skill-level">SPREADSHEET</span>
+        </article>
+
+        <!-- POWERPOINT -->
+        <article class="skill-card">
+          <div class="skill-icon">
+            <svg viewBox="0 0 100 100" role="img" aria-label="Logo Microsoft PowerPoint">
+              <rect x="13" y="13" width="74" height="74" rx="9" fill="#B7472A"/>
+              <circle cx="59" cy="50" r="27" fill="#ED6C47"/>
+              <path d="M14 28 H54 V77 H14 Q8 77 8 71 V34 Q8 28 14 28Z" fill="#C43E1C"/>
+              <path d="M28 35 H43 Q57 35 57 48 Q57 61 43 61 H37 V73 H28Z"
+                    fill="#ffffff"/>
+              <path d="M37 43 V53 H43 Q49 53 49 48 Q49 43 43 43Z"
+                    fill="#C43E1C"/>
+            </svg>
+          </div>
+          <h3>PowerPoint</h3>
+          <p>Membuat dan menata slide presentasi yang informatif.</p>
+          <span class="skill-level">PRESENTATION</span>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- WEB DEVELOPMENT -->
+    <div class="tool-category">
+      <h3 class="tool-category-title">Web Development</h3>
+
+      <div class="skill-grid">
+
+        <article class="skill-card">
+          <div class="skill-icon">
+            <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="VS Code">
+          </div>
+          <h3>VS Code</h3>
+          <p>Menggunakan code editor untuk menulis dan mengelola project.</p>
+          <span class="skill-level">CODE EDITOR</span>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-icon">
+            <img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP">
+          </div>
+          <h3>PHP</h3>
+          <p>Mengenal sintaks PHP untuk logika aplikasi web.</p>
+          <span class="skill-level">PROGRAMMING</span>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-icon">
+            <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML">
+          </div>
+          <h3>HTML</h3>
+          <p>Menyusun struktur halaman website menggunakan HTML.</p>
+          <span class="skill-level">WEB STRUCTURE</span>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-icon">
+            <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS">
+          </div>
+          <h3>CSS</h3>
+          <p>Mengatur warna, layout, dan tampilan website.</p>
+          <span class="skill-level">WEB STYLING</span>
+        </article>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- PENGALAMAN -->
+  <section class="section experience" id="experience">
+
+    <div class="section-heading">
+      <p class="eyebrow">03 / PERJALANAN</p>
+      <h2>Pengalaman & <span>aktivitas.</span></h2>
+      <p class="section-sub">
+        Bagian ini dapat diisi dengan pengalaman organisasi,
+        kepanitiaan, kegiatan kampus, maupun project.
+      </p>
+    </div>
+
+    <div class="timeline">
+
+      <article class="timeline-item">
+        <span class="timeline-year">2026 — SEKARANG</span>
+        <div>
+          <h3>Nama Kegiatan / Organisasi</h3>
+          <p class="muted">Posisi atau Peran · Nama Instansi</p>
+          <p>Jelaskan tanggung jawab dan pengalaman yang diperoleh.</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-year">2025 — 2026</span>
+        <div>
+          <h3>Pengalaman atau Kepanitiaan</h3>
+          <p class="muted">Posisi atau Peran · Nama Acara</p>
+          <p>Tuliskan kontribusi dan kegiatan yang pernah dilakukan.</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-year">2024 — 2025</span>
+        <div>
+          <h3>Project / Pengalaman Lain</h3>
+          <p class="muted">Peran · Nama Project</p>
+          <p>Tambahkan pengalaman relevan lainnya jika diperlukan.</p>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECT -->
+  <section class="section projects" id="projects">
+
+    <div class="section-heading">
+      <p class="eyebrow">04 / KARYA PILIHAN</p>
+      <h2>Project yang <span>pernah saya buat.</span></h2>
+      <p class="section-sub">
+        Tambahkan screenshot desain, poster, video,
+        website, atau hasil editing milik sendiri.
+      </p>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project-card">
+        <div class="project-image project-blue">
+          <span>PROJECT 01</span>
+          <b>Visual<br>Design</b>
+        </div>
+        <div class="project-info">
+          <div>
+            <h3>Desain Grafis</h3>
+            <p>Poster · Canva</p>
+          </div>
+          <span>↗</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image project-purple">
+          <span>PROJECT 02</span>
+          <b>UI / UX<br>Exploration</b>
+        </div>
+        <div class="project-info">
+          <div>
+            <h3>Desain Antarmuka</h3>
+            <p>UI Design · Figma</p>
+          </div>
+          <span>↗</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image project-cyan">
+          <span>PROJECT 03</span>
+          <b>Video<br>Editing</b>
+        </div>
+        <div class="project-info">
+          <div>
+            <h3>Konten Video</h3>
+            <p>Video Editing · CapCut</p>
+          </div>
+          <span>↗</span>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERTIFIKAT -->
+  <section class="section certificates" id="certificates">
+
+    <div class="section-heading">
+      <p class="eyebrow">05 / PENCAPAIAN</p>
+      <h2>Sertifikat</h2>
+    </div>
+
+    <div class="certificate-grid">
+
+      <article class="certificate-card">
+        <div class="certificate-preview" data-pdf="./sertifikat/sertifikat-1.pdf">
+          <canvas class="certificate-canvas"></canvas>
+          <span class="certificate-message">Memuat sertifikat...</span>
+        </div>
+
+        <div class="certificate-info">
+          <div class="certificate-text">
+            <b>Anggota Divisi Pubdekdok</b>
+            <small>Latihan Keterampilan Manajemen Mahasiswa 2025</small>
+          </div>
+          <a href="./sertifikat/sertifikat-1.pdf" target="_blank" rel="noopener noreferrer">Lihat PDF ↗</a>
+        </div>
+      </article>
+
+      <article class="certificate-card">
+        <div class="certificate-preview" data-pdf="./sertifikat/sertifikat-2.pdf">
+          <canvas class="certificate-canvas"></canvas>
+          <span class="certificate-message">Memuat sertifikat...</span>
+        </div>
+
+        <div class="certificate-info">
+          <div class="certificate-text">
+            <b>Anggota Divisi Pubdekdok</b>
+            <small>Compfair 2025</small>
+          </div>
+          <a href="./sertifikat/sertifikat-2.pdf" target="_blank" rel="noopener noreferrer">Lihat PDF ↗</a>
+        </div>
+      </article>
+
+      <article class="certificate-card">
+        <div class="certificate-preview" data-pdf="./sertifikat/sertifikat-3.pdf">
+          <canvas class="certificate-canvas"></canvas>
+          <span class="certificate-message">Memuat sertifikat...</span>
+        </div>
+
+        <div class="certificate-info">
+          <div class="certificate-text">
+            <b>Sekretaris Pelaksana</b>
+            <small>Softskill Improvement (SIM) 2026</small>
+          </div>
+          <a href="./sertifikat/sertifikat-3.pdf" target="_blank" rel="noopener noreferrer">Lihat PDF ↗</a>
+        </div>
+      </article>
+
+      <article class="certificate-card">
+        <div class="certificate-preview" data-pdf="./sertifikat/sertifikat-4.pdf">
+          <canvas class="certificate-canvas"></canvas>
+          <span class="certificate-message">Memuat sertifikat...</span>
+        </div>
+
+        <div class="certificate-info">
+          <div class="certificate-text">
+            <b>Bendahara Pelaksana</b>
+            <small>PKKMB Fasilkom 2026</small>
+          </div>
+          <a href="./sertifikat/sertifikat-4.pdf" target="_blank" rel="noopener noreferrer">Lihat PDF ↗</a>
+        </div>
+      </article>
+
+      <article class="certificate-card">
+        <div class="certificate-preview" data-pdf="./sertifikat/sertifikat-5.pdf">
+          <canvas class="certificate-canvas"></canvas>
+          <span class="certificate-message">Memuat sertifikat...</span>
+        </div>
+
+        <div class="certificate-info">
+          <div class="certificate-text">
+            <b>Koordinator Divisi Pubdekdok</b>
+            <small>Fasilkom Festival 2026</small>
+          </div>
+          <a href="./sertifikat/sertifikat-5.pdf" target="_blank" rel="noopener noreferrer">Lihat PDF ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- KONTAK -->
+  <section class="contact section" id="contact">
+
+    <p class="eyebrow">06 / KONTAK</p>
+    <h2>Kontak <span>Saya.</span></h2>
+
+    <div class="social-links">
+      <a href="https://wa.me/6282320062185" target="_blank" rel="noreferrer">WhatsApp ↗</a>
+      <a href="https://www.instagram.com/solikhalulu/" target="_blank" rel="noreferrer">Instagram ↗</a>
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+  <a class="logo" href="#home">PORTO<span>.</span></a>
+  <p>© <span id="year"></span> Lulu Solikha. All Rights Reserved.</p>
+  <a href="#home">Kembali ke atas ↑</a>
+</footer>
+
+
+<!-- PDF.JS UNTUK SEMUA SERTIFIKAT -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  if (typeof pdfjsLib === "undefined") {
+    document.querySelectorAll("#certificates .certificate-message")
+      .forEach(function (message) {
+        message.textContent = "PDF.js gagal dimuat. Periksa koneksi internet.";
+      });
+    return;
+  }
+
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+  const previews = document.querySelectorAll(
+    "#certificates .certificate-preview[data-pdf]"
+  );
+
+  previews.forEach(function (preview) {
+
+    const pdfUrl = preview.dataset.pdf;
+    const canvas = preview.querySelector(".certificate-canvas");
+    const message = preview.querySelector(".certificate-message");
+    const context = canvas.getContext("2d");
+
+    let pdfPage = null;
+    let renderTask = null;
+    let resizeTimer = null;
+    let renderVersion = 0;
+
+    async function renderCertificate() {
+
+      if (!pdfPage) return;
+
+      const currentVersion = ++renderVersion;
+
+      if (renderTask) {
+        try {
+          renderTask.cancel();
+        } catch (error) {}
+      }
+
+      const boxWidth = preview.clientWidth;
+      const boxHeight = preview.clientHeight;
+
+      if (!boxWidth || !boxHeight) return;
+
+      const originalViewport = pdfPage.getViewport({
+        scale: 1
+      });
+
+      const scale = Math.min(
+        boxWidth / originalViewport.width,
+        boxHeight / originalViewport.height
+      );
+
+      const pixelRatio = Math.min(
+        window.devicePixelRatio || 1,
+        2
+      );
+
+      const viewport = pdfPage.getViewport({
+        scale: scale * pixelRatio
+      });
+
+      canvas.width = Math.floor(viewport.width);
+      canvas.height = Math.floor(viewport.height);
+
+      canvas.style.width =
+        (viewport.width / pixelRatio) + "px";
+
+      canvas.style.height =
+        (viewport.height / pixelRatio) + "px";
+
+      context.fillStyle = "#ffffff";
+
+      context.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+
+      renderTask = pdfPage.render({
+        canvasContext: context,
+        viewport: viewport,
+        background: "#ffffff"
+      });
+
+      try {
+        await renderTask.promise;
+      } catch (error) {
+        if (error.name !== "RenderingCancelledException") {
+          console.error("Gagal merender PDF:", pdfUrl, error);
+        }
+      }
+
+      if (currentVersion === renderVersion) {
+        renderTask = null;
+      }
+    }
+
+    async function loadCertificate() {
+
+      try {
+
+        const loadingTask = pdfjsLib.getDocument(pdfUrl);
+        const pdf = await loadingTask.promise;
+
+        pdfPage = await pdf.getPage(1);
+
+        message.style.display = "none";
+
+        await renderCertificate();
+
+        const observer = new ResizeObserver(function () {
+          clearTimeout(resizeTimer);
+
+          resizeTimer = setTimeout(function () {
+            renderCertificate();
+          }, 150);
+        });
+
+        observer.observe(preview);
+
+      } catch (error) {
+
+        console.error("Sertifikat gagal dimuat:", pdfUrl, error);
+
+        message.style.display = "flex";
+        message.textContent = "Sertifikat gagal dimuat.";
+
+      }
+    }
+
+    loadCertificate();
+
+  });
+
+});
+</script>
+
+
+<!-- JAVASCRIPT MENU, TEMA, DAN FOOTER -->
+<script>
+  // MENU NAVIGASI
+  const menuToggle = document.getElementById("menuToggle");
+  const nav = document.getElementById("nav");
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+      });
+    });
+  }
+
+  // TAHUN FOOTER
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+  // LIGHT MODE DAN DARK MODE
+  const themeToggle = document.getElementById("themeToggle");
+
+  function updateThemeButton() {
+    const isLight = document.body.classList.contains("light-mode");
+
+    themeToggle.textContent = isLight ? "🌙" : "☀️";
+
+    themeToggle.setAttribute(
+      "aria-label",
+      isLight ? "Aktifkan mode gelap" : "Aktifkan mode terang"
+    );
+
+    themeToggle.title = isLight
+      ? "Aktifkan mode gelap"
+      : "Aktifkan mode terang";
+  }
+
+  // Mengambil tema yang terakhir dipilih.
+  try {
+    const savedTheme = localStorage.getItem("portfolio-theme");
+
+    if (savedTheme === "light") {
+      document.body.classList.add("light-mode");
+    }
+  } catch (error) {
+    console.warn("Penyimpanan tema tidak tersedia.");
+  }
+
+  updateThemeButton();
+
+  // Mengganti tema saat tombol diklik.
+  themeToggle.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-mode");
+
+    const currentTheme =
+      document.body.classList.contains("light-mode")
+        ? "light"
+        : "dark";
+
+    try {
+      localStorage.setItem("portfolio-theme", currentTheme);
+    } catch (error) {
+      console.warn("Penyimpanan tema tidak tersedia.");
+    }
+
+    updateThemeButton();
+
+  });
+</script>
+
+</body>
+</html>
